@@ -121,7 +121,7 @@ resource "google_compute_firewall" "public_ssh" {
 
    allow {
      protocol = "tcp"
-     ports    = ["22"]
+     ports    = ["22","80"]
    }
 
    direction = "INGRESS"
