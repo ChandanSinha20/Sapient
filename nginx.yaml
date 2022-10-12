@@ -1,10 +1,8 @@
 ---
-  - name: Ensure Nginx is at the latest version
-    yum:
-      name: nginx
-      state: latest
+  - name: Install Nginx
+    hosts: all
+    remote_user: ansible
+    become: yes
   
-  - name: Make sure Nginx is running
-    systemd:
-      state: started
-      name: nginx
+    roles:
+    - nginx
